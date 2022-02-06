@@ -1,6 +1,6 @@
 import React, { ChangeEventHandler, useEffect } from 'react';
 import './App.css';
-import { Box, createTheme, CssBaseline, Typography, Grid, ListItem, ListItemText, Paper, useMediaQuery, FormControl, InputLabel, FilledInput } from '@mui/material';
+import { Link, Box, createTheme, CssBaseline, Typography, Grid, ListItem, ListItemText, Paper, useMediaQuery, FormControl, InputLabel, FilledInput } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 import { FixedSizeList, ListChildComponentProps } from 'react-window';
 import { useAppDispatch, useAppSelector } from './app/hooks';
@@ -117,6 +117,9 @@ function App() {
             </Paper>
           </Grid>
         </Grid>
+        <footer style={{color: "gray", position: "fixed", bottom: 0, width: '100%'}}>
+          <Paper sx={{padding: '0.2em', width: '100%'}}>Created By <Link href='https://github.com/FenrirJamie/wordle-solver'>Jamie Duggan</Link></Paper>
+      </footer>
       </Paper>
     </ThemeProvider>
   );
