@@ -1,11 +1,14 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import { setupListeners } from '@reduxjs/toolkit/dist/query';
+import { wordleSolverSlice } from '../features/wordleSolver/wordleSolverSlice';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    [wordleSolverSlice.name]: wordleSolverSlice.reducer,
   },
 });
+
+setupListeners(store.dispatch);
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof store.getState>;
